@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple blog application built with React.",
   "main": "src/index.js",
-  "homepage": "https://[YOUR_USERNAME].github.io/myblog",
+  "homepage": "https://lockman04.github.io/myblog",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -33,7 +33,6 @@
     "react-scripts": "^5.0.1",
     "sonner": "^2.0.6"
   },
-  "homepage": "http://yourusername.github.io/myblog",
   "browserslist": {
     "production": [
       ">0.2%",
