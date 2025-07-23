@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Function to check if user is admin
+    function isAdmin() {
+      return request.auth != null 
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Rules cho collection users
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if isAdmin(); // Admin có thể đọc tất cả users
+    }
+    
+    // Rules cho collection blogs
+    match /blogs/{blogId} {
+      // Cho phép mọi người đọc blogs đã publish và không bị archive
+      // Cho phép author đọc tất cả blogs của mình
+      // Cho phép admin đọc tất cả blogs
+      allow read: if (resource.data.published == true && resource.data.get('archived', false) == false)
+                  || (request.auth != null && request.auth.uid == resource.data.authorId)
+                  || isAdmin();
+      
+      // Cho phép user đã đăng nhập tạo blog mới
+      allow create: if request.auth != null 
+                    && request.auth.uid != null
+                    && request.resource.data.authorId == request.auth.uid;
+      
+      // Cho phép author update blog của mình
+      // Cho phép admin update bất kỳ blog nào
+      allow update: if (request.auth != null && request.auth.uid == resource.data.authorId)
+                    || isAdmin();
+      
+      // Cho phép author xóa blog của mình
+      // Cho phép admin xóa bất kỳ blog nào
+      allow delete: if (request.auth != null && request.auth.uid == resource.data.authorId)
+                    || isAdmin();
+    }
+    
+    // Rules cho các collection khác (nếu cần)
+    match /{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+/* =================================
+   BẢNG MÀU WEBSITE - COLORS.CSS
+   ================================= */
+
+/* Bạn có thể thay đổi các màu ở đây để tùy chỉnh giao diện website */
+
+:root {
+  /* === MÀU CHÍNH === */
+  --primary-color: #3498db;          /* Xanh dương chính */
+  --primary-hover: #2980b9;          /* Xanh đậm khi hover */
+  --primary-light: #5dade2;          /* Xanh nhạt */
+  --primary-dark: #2471a3;           /* Xanh đậm */
+  
+  /* === MÀU PHỤ === */
+  --secondary-color: #2c3e50;        /* Xám đen chủ đạo */
+  --secondary-light: #34495e;        /* Xám đen nhạt */
+  --accent-color: #e74c3c;           /* Đỏ nhấn (logout, error) */
+  --accent-hover: #c0392b;           /* Đỏ đậm khi hover */
+  
+  /* === MÀU NỀN === */
+  --bg-primary: #ffffff;             /* Nền trắng chính */
+  --bg-secondary: #fafafa;           /* Nền xám nhạt */
+  --bg-light: #f8f9fa;               /* Nền sáng */
+  --bg-dark: #2c3e50;                /* Nền tối */
+  
+  /* === MÀU GRADIENT === */
+  --gradient-primary: linear-gradient(135deg, #0C97FA 0%, #16E1F5 100%);
+  --gradient-hero: linear-gradient(135deg, #0C97FA 0%, #16E1F5 100%);
+  --gradient-auth: linear-gradient(135deg, #FFC52D 0%, #ECFF9F 100%);
+  --gradient-404: linear-gradient(135deg, #2B5876 0%, #3E4376 100%);
+  /* --gradient-success: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); */
+  --gradient-white: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+
+  /* === MÀU CHỮ === */
+  --text-primary: #333333;           /* Chữ đen chính */
+  --text-secondary: #666666;         /* Chữ xám */
+  --text-light: #999999;             /* Chữ xám nhạt */
+  --text-white: #ffffff;             /* Chữ trắng */
+  --text-muted: #bdc3c7;             /* Chữ mờ */
+  
+  /* === MÀU ĐƯỜNG VIỀN === */
+  --border-light: #eeeeee;           /* Viền nhạt */
+  --border-medium: #dddddd;          /* Viền trung bình */
+  --border-dark: #cccccc;            /* Viền đậm */
+  
+  /* === MÀU TRẠNG THÁI === */
+  --success-color: #27ae60;          /* Xanh lá thành công */
+  --success-bg: #d5f4e6;             /* Nền thành công */
+  --warning-color: #f39c12;          /* Vàng cảnh báo */
+  --warning-bg: #fdf2e9;             /* Nền cảnh báo */
+  --error-color: #e74c3c;            /* Đỏ lỗi */
+  --error-bg: #ffebee;               /* Nền lỗi */
+  --info-color: #3498db;             /* Xanh thông tin */
+  --info-bg: #e3f2fd;               /* Nền thông tin */
+  
+  /* === MÀU BÓNG ĐỔ === */
+  --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow-medium: 0 4px 15px rgba(0,0,0,0.15);
+  --shadow-dark: 0 10px 30px rgba(0,0,0,0.2);
+  --shadow-hover: 0 12px 30px rgba(0,0,0,0.15);
+  
+  /* === MÀU ĐĂNG NHẬP === */
+  --auth-primary: #007bff;           /* Xanh nút đăng nhập */
+  --auth-hover: #0056b3;             /* Xanh đậm khi hover */
+  --google-border: #e1e5e9;          /* Viền nút Google */
+  --google-hover: #4285f4;           /* Màu hover Google */
+  
+  /* === MÀU DROPDOWN === */
+  --dropdown-bg: #ffffff;            /* Nền dropdown */
+  --dropdown-hover: #f5f5f5;         /* Hover dropdown item */
+  --dropdown-divider: #eeeeee;       /* Đường phân cách */
+  
+  /* === MÀU RESPONSIVE === */
+  --mobile-bg: #f8f9fa;              /* Nền mobile menu */
+  --mobile-border: #007bff;          /* Viền mobile auth */
+  --mobile-text: #007bff;            /* Chữ mobile auth */
+}
+
+/* =================================
+   HƯỚNG DẪN SỬ DỤNG
+   ================================= */
+
+/*
+💡 CÁCH THAY ĐỔI MÀU:
+
+1. CHỦ ĐỀ XANH DƯƠNGxanh (Mặc định):
+   --primary-color: #3498db;
+   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+2. CHỦ ĐỀ XANH LÁ:
+   --primary-color: #27ae60;
+   --primary-hover: #229954;
+   --gradient-primary: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+
+3. CHỦ ĐỀ TÍM:
+   --primary-color: #9b59b6;
+   --primary-hover: #8e44ad;
+   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+4. CHỦ ĐỀ CAM:
+   --primary-color: #e67e22;
+   --primary-hover: #d35400;
+   --gradient-primary: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+
+5. CHỦ ĐỀ HỒNG:
+   --primary-color: #e91e63;
+   --primary-hover: #c2185b;
+   --gradient-primary: linear-gradient(135deg, #ff6a88 0%, #ff9a9e 100%);
+
+6. CHỦ ĐỀ TỐI (Dark Mode):
+   --bg-primary: #2c3e50;
+   --bg-secondary: #34495e;
+   --text-primary: #ecf0f1;
+   --text-secondary: #bdc3c7;
+
+📝 LƯU Ý:
+- Sau khi thay đổi, save file và refresh browser
+- Có thể thay đổi từng màu riêng lẻ hoặc cả bộ theme
+- Gradient có thể tạo tại: https://cssgradient.io/
+- Màu có thể chọn tại: https://coolors.co/
+*/
