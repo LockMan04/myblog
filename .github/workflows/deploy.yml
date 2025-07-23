@@ -3,8 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -26,13 +27,13 @@ jobs:
     - name: Build
       run: npm run build
       env:
-        REACT_APP_FIREBASE_API_KEY: ${{ vars.REACT_APP_FIREBASE_API_KEY }}
-        REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ vars.REACT_APP_FIREBASE_AUTH_DOMAIN }}
-        REACT_APP_FIREBASE_PROJECT_ID: ${{ vars.REACT_APP_FIREBASE_PROJECT_ID }}
-        REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ vars.REACT_APP_FIREBASE_STORAGE_BUCKET }}
-        REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ vars.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
-        REACT_APP_FIREBASE_APP_ID: ${{ vars.REACT_APP_FIREBASE_APP_ID }}
-        REACT_APP_FIREBASE_MEASUREMENT_ID: ${{ vars.REACT_APP_FIREBASE_MEASUREMENT_ID }}
+        REACT_APP_FIREBASE_API_KEY: "AIzaSyDwCj5Q0mrXUkDyR42JXKoldsQZB3ay1bc"
+        REACT_APP_FIREBASE_AUTH_DOMAIN: "lockmanblog.firebaseapp.com"
+        REACT_APP_FIREBASE_PROJECT_ID: "lockmanblog"
+        REACT_APP_FIREBASE_STORAGE_BUCKET: "lockmanblog.firebasestorage.app"
+        REACT_APP_FIREBASE_MESSAGING_SENDER_ID: "269919632510"
+        REACT_APP_FIREBASE_APP_ID: "1:269919632510:web:b16aaf65d182266c676c2f"
+        REACT_APP_FIREBASE_MEASUREMENT_ID: "G-347BJ7MDYQ"
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
