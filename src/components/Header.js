@@ -32,11 +32,11 @@ const Header = () => {
     }, [isAuthModalOpen, setIsBlurred]);
 
     const categories = {
-        'Công nghệ': ['Web Development', 'Mobile App', 'AI/Machine Learning', 'DevOps', 'Database'],
         // 'Kinh doanh': ['Marketing', 'Sales', 'Startup', 'E-commerce', 'Quản lý'],
         // 'Đời sống': ['Sức khỏe', 'Du lịch', 'Ẩm thực', 'Lifestyle', 'Gia đình'],
         'Công cụ': ['Link rút gọn', 'Tạo mã QR', 'Chuyển đổi định dạng', 'Công cụ tìm kiếm'],
-        'Khác': ['Đầu tư', 'Tiết kiệm', 'Crypto', 'Bất động sản', 'Bảo hiểm']
+        'Chia sẻ': ['Hong 😏', 'Hong 😏', 'Hong 😏', 'Hong 😏'],
+        'Khác':  ['Hong 😏', 'Hong 😏', 'Hong 😏', 'Hong 😏'],
     };
 
     const handleMouseEnter = (category) => {
@@ -82,11 +82,20 @@ const Header = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchQuery.trim()) {
-            // Tạm thời console log, sau này có thể điều hướng đến trang search
+            // Xử lý search ở đây
             console.log('Tìm kiếm:', searchQuery);
-            setSearchQuery('');
             setIsSearchOpen(false);
         }
+    };
+    
+    // Function để xử lý link đặc biệt cho một số subcategory
+    const getSubcategoryLink = (category, subcategory) => {
+        // Xử lý các link đặc biệt
+        if (subcategory === 'Tạo mã QR') {
+            return '/qr-code';
+        }
+        // Default link pattern
+        return `/category/${category.toLowerCase()}/${subcategory.toLowerCase()}`;
     };
 
     const toggleSearch = () => {
@@ -154,9 +163,9 @@ const Header = () => {
                                     <ul className="dropdown-menu">
                                         {categories[category].map(subcategory => (
                                             <li key={subcategory}>
-                                                <a href={`/category/${category.toLowerCase()}/${subcategory.toLowerCase()}`}>
+                                                <Link to={getSubcategoryLink(category, subcategory)}>
                                                     {subcategory}
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>

@@ -11,6 +11,7 @@ import BlogManagement from './pages/BlogManagement';
 import CreateBlog from './pages/CreateBlog';
 import BlogDetail from './pages/BlogDetail';
 import ArchivePage from './pages/ArchivePage';
+import QRCode from './pages/QRCode';
 import NotFound from './pages/NotFound';
 import './styles/App.css';
 
@@ -45,6 +46,7 @@ function App() {
               <Route path="/post/:slug" element={<BlogDetail />} />
               <Route path="/edit-blog/:id" element={<CreateBlog />} />
               <Route path="/archive" element={<ArchivePage />} />
+              <Route path="/qr-code" element={<QRCode />} />
               {/* Catch all route for 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
