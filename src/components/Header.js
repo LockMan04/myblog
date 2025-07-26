@@ -32,11 +32,11 @@ const Header = () => {
     }, [isAuthModalOpen, setIsBlurred]);
 
     const categories = {
-        'Công nghệ': ['Web Development', 'Mobile App', 'AI/Machine Learning', 'DevOps', 'Database'],
         // 'Kinh doanh': ['Marketing', 'Sales', 'Startup', 'E-commerce', 'Quản lý'],
         // 'Đời sống': ['Sức khỏe', 'Du lịch', 'Ẩm thực', 'Lifestyle', 'Gia đình'],
         'Công cụ': ['Link rút gọn', 'Tạo mã QR', 'Chuyển đổi định dạng', 'Công cụ tìm kiếm'],
-        'Khác': ['Đầu tư', 'Tiết kiệm', 'Crypto', 'Bất động sản', 'Bảo hiểm']
+        'Chia sẻ': ['Hong 😏', 'Hong 😏', 'Hong 😏', 'Hong 😏'],
+        'Khác':  ['Hong 😏', 'Hong 😏', 'Hong 😏', 'Hong 😏'],
     };
 
     const handleMouseEnter = (category) => {
