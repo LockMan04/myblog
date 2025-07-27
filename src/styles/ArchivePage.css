@@ -3,6 +3,7 @@
   min-height: calc(100vh - 160px);
   padding: 40px 0;
   background: var(--bg-light);
+  transition: background-color 0.3s ease;
 }
 
 .archive-page .container {
