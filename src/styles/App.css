@@ -14,6 +14,7 @@ body {
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header Styles */
@@ -24,7 +25,7 @@ body {
     top: 0;
     z-index: 9999999999;
     border-bottom: 1px solid var(--border-light);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
     overflow: visible;
 }
 
@@ -672,14 +673,14 @@ body {
 }
 
 .image-overlay .category {
-    background: rgba(52, 152, 219, 0.95);
+    background: var(--primary-color);
     color: var(--text-white);
     padding: 6px 14px;
     border-radius: 20px;
     font-weight: 500;
     font-size: 12px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 2px 8px var(--primary-shadow);
 }
 
 /* Post Menu */
@@ -760,7 +761,7 @@ body {
 
 /* Radix UI Dropdown Content - keep for backwards compatibility */
 .post-menu-dropdown {
-    background: white;
+    background: var(--bg-primary);
     border-radius: 12px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
     padding: 8px 0;
@@ -861,25 +862,17 @@ body {
 
 .menu-item:focus,
 .dropdown-item:focus {
-    background: #f8f9fa;
-    color: #3498db;
+    color: var(--primary-hover);
 }
 
 .menu-item:hover,
 .dropdown-item:hover {
-    background: #f8f9fa;
-    color: #3498db;
-}
-
-.menu-item[data-highlighted],
-.dropdown-item[data-highlighted] {
-    background: #f8f9fa;
-    color: #3498db;
+    color: var(--primary-hover);
 }
 
 .menu-item.danger,
 .dropdown-item.danger {
-    color: #e74c3c;
+    color: var(--accent-color);
 }
 
 .menu-item.danger:hover,
@@ -888,8 +881,7 @@ body {
 .dropdown-item.danger:hover,
 .dropdown-item.danger:focus,
 .dropdown-item.danger[data-highlighted] {
-    background: #fdf2f2;
-    color: #c0392b;
+    color: var(--accent-hover);
 }
 
 .menu-item i {
@@ -1126,6 +1118,11 @@ body {
 
 /* Hide mobile search on desktop */
 .mobile-search-item {
+    display: none;
+}
+
+/* Hide mobile dark mode toggle on desktop */
+.mobile-dark-mode-item {
     display: none;
 }
 
@@ -1370,6 +1367,15 @@ body {
         margin-top: 10px !important;
         border-top: 2px solid var(--mobile-border) !important;
         border-bottom: none !important;
+    }
+
+    /* Mobile dark mode toggle in menu */
+    .mobile-dark-mode-item {
+        display: flex !important; /* Show on mobile */
+        justify-content: center !important;
+        padding: 15px 0 !important;
+        background-color: var(--bg-light) !important;
+        border-bottom: 1px solid var(--border-light) !important;
     }
 
     .mobile-auth-button {
@@ -1931,9 +1937,9 @@ body {
     color: var(--text-primary);
 }
 
-.dropdown-item:hover {
+/* .dropdown-item:hover {
     background: var(--bg-light);
-}
+} */
 
 .dropdown-item.logout {
     color: var(--accent-color);
@@ -2909,4 +2915,66 @@ body {
         height: 55px;
         font-size: 22px;
     }
+}
+
+/* =================================
+   DARK MODE SPECIFIC STYLES
+   ================================= */
+
+/* Loading Overlay Custom Styling for Dark Mode */
+[data-theme="dark"] .loading-overlay {
+  background: rgba(26, 32, 44, 0.8);
+}
+
+[data-theme="dark"] .loading-content {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Modal Overlays Dark Mode */
+[data-theme="dark"] .auth-modal-overlay,
+[data-theme="dark"] .search-modal-overlay,
+[data-theme="dark"] .blog-modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Scrollbar Dark Mode */
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 4px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--border-dark);
+}
+
+/* Selection Colors for Dark Mode */
+[data-theme="dark"] ::selection {
+  background: var(--primary-color);
+  color: var(--text-white);
+}
+
+[data-theme="dark"] ::-moz-selection {
+  background: var(--primary-color);
+  color: var(--text-white);
+}
+
+/* Smooth transitions for all color-related properties */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Override transition for specific elements that should be faster */
+button,
+.dark-mode-toggle,
+.toggle-slider {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

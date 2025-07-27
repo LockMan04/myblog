@@ -3,7 +3,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f8f9fa;
+  background: var(--bg-light);
+  transition: background-color 0.3s ease;
 }
 
 .create-blog-container {
@@ -26,7 +27,7 @@
 }
 
 .create-blog-header h1 {
-  color: #2c3e50;
+  color: var(--text-primary);
   margin: 0;
   font-size: 2.5rem;
   font-weight: 700;
@@ -86,14 +87,14 @@
 }
 
 .btn-save {
-  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  background: var(--success-color);
   color: white;
-  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+  box-shadow: var(--shadow-success);
 }
 
 .btn-save:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+  box-shadow: 0 6px 20px var(--success-hover);
 }
 
 .btn-save:disabled {
@@ -104,7 +105,7 @@
 
 /* Form Styles */
 .create-blog-form {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -139,7 +140,7 @@
 
 .title-input:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
@@ -166,7 +167,7 @@
 
 .category-select:focus, .image-input:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
@@ -181,7 +182,7 @@
 }
 
 .content-editor:focus-within {
-  border-color: #3498db;
+  border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
@@ -189,6 +190,7 @@
   min-height: 400px;
   font-size: 16px;
   line-height: 1.6;
+  background-color: white;
 }
 
 .content-editor .ql-editor {
@@ -205,7 +207,7 @@
 }
 
 .publish-options {
-  background: #f8f9fa;
+  background: var(--bg-primary);
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #e1e8ed;
@@ -221,7 +223,7 @@
 .checkbox-group input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  accent-color: #3498db;
+  accent-color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -263,7 +265,7 @@
 }
 
 .btn-login {
-  background: linear-gradient(135deg, #3498db, #2980b9);
+  background: linear-gradient(135deg, var(--primary-color), #2980b9);
   color: white;
   border: none;
   padding: 12px 30px;

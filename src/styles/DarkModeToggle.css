@@ -1,0 +1,119 @@
+/* Dark Mode Toggle Component Styles */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.toggle-container {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background: var(--bg-light);
+  border-radius: 50px;
+  border: 2px solid var(--border-light);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .toggle-container {
+  background: var(--bg-dark);
+  border-color: var(--border-dark);
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-slider.light {
+  left: 1px;
+  background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+}
+
+.toggle-slider.dark {
+  left: 25px;
+  background: linear-gradient(135deg, #2d3436, #636e72);
+}
+
+.toggle-icon {
+  color: var(--text-white);
+  transition: all 0.3s ease;
+}
+
+.toggle-slider.light .toggle-icon {
+  color: #e17055;
+}
+
+.toggle-slider.dark .toggle-icon {
+  color: #74b9ff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    min-width: 40px;
+    min-height: 40px;
+  }
+  
+  .toggle-container {
+    width: 44px;
+    height: 24px;
+  }
+  
+  .toggle-slider {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .toggle-slider.dark {
+    left: 22px;
+  }
+  
+  .toggle-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Animation cho icon */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dark-mode-toggle:active .toggle-icon {
+  animation: rotate 0.5s ease;
+}
+
+/* Hover effects */
+.toggle-container {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+[data-theme="dark"] .dark-mode-toggle:hover .toggle-container {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(93, 173, 226, 0.2);
+}

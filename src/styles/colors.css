@@ -10,6 +10,7 @@
    --primary-hover: #2980b9;          /* Xanh đậm khi hover */
    --primary-light: #5dade2;          /* Xanh nhạt */
    --primary-dark: #2471a3;           /* Xanh đậm */
+   --primary-shadow: rgba(52, 152, 219, 0.2); /* Bóng đổ nhẹ cho các thành phần chính */
    
    /* === MÀU PHỤ === */
    --secondary-color: #2c3e50;        /* Xám đen chủ đạo */
@@ -26,13 +27,14 @@
    --bg-secondary: #fafafa;           /* Nền xám nhạt */
    --bg-light: #f8f9fa;               /* Nền sáng */
    --bg-dark: #2c3e50;                /* Nền tối */
+   --bg-hover: #f5f5f5;               /* Nền hover */
    
    /* === MÀU GRADIENT === */
    --gradient-primary: linear-gradient(135deg, #0C97FA 0%, #16E1F5 100%);
    --gradient-hero: linear-gradient(135deg, #0C97FA 0%, #16E1F5 100%);
    --gradient-auth: linear-gradient(135deg, #FFC52D 0%, #ECFF9F 100%);
    --gradient-404: linear-gradient(135deg, #2B5876 0%, #3E4376 100%);
-   /* --gradient-success: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); */
+   --gradient-success: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
    --gradient-white: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 
    /* === MÀU CHỮ === */
@@ -62,6 +64,7 @@
    --shadow-medium: 0 4px 15px rgba(0,0,0,0.15);
    --shadow-dark: 0 10px 30px rgba(0,0,0,0.2);
    --shadow-hover: 0 12px 30px rgba(0,0,0,0.15);
+   --shadow-success: 0 4px 15px rgba(39, 174, 96, 0.2);
    
    /* === MÀU ĐĂNG NHẬP === */
    --auth-primary: #007bff;           /* Xanh nút đăng nhập */
@@ -81,13 +84,90 @@
 }
 
 /* =================================
+   DARK MODE - CHẾ ĐỘ TỐI
+   ================================= */
+
+[data-theme="dark"] {
+   /* === MÀU CHÍNH DARK === */
+   --primary-color: #5dade2;          /* Xanh sáng hơn cho dark mode */
+   --primary-hover: #3498db;          /* Xanh hover dark mode */
+   --primary-light: #85c1e9;          /* Xanh nhạt dark mode */
+   --primary-dark: #2980b9;           /* Xanh đậm dark mode */
+   
+   /* === MÀU PHỤ DARK === */
+   --secondary-color: #ecf0f1;        /* Trắng cho header text */
+   --secondary-light: #bdc3c7;        /* Xám nhạt */
+   --accent-color: #e74c3c;           /* Giữ nguyên màu đỏ */
+   --accent-hover: #c0392b;           /* Giữ nguyên hover đỏ */
+   --accent-light: #f1948a;           /* Giữ nguyên đỏ nhạt */
+   
+   /* === MÀU NỀN DARK === */
+   --bg-primary: #1a1a1a;             /* Nền đen chính */
+   --bg-secondary: #2d3748;           /* Nền xám đậm */
+   --bg-light: #374151;               /* Nền sáng trong dark mode */
+   --bg-dark: #111827;                /* Nền rất tối */
+   --bg-hover: #4a5568;               /* Nền hover dark */
+   
+   /* === MÀU GRADIENT DARK === */
+   --gradient-primary: linear-gradient(135deg, #075D98  0%, #0E8F99  100%);
+   --gradient-hero: linear-gradient(135deg, #075D98 0%, #0E8F99 100%);
+   --gradient-auth: linear-gradient(135deg, #075D98 0%, #0E8F99  100%);
+   --gradient-404: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+   --gradient-white: linear-gradient(135deg, #2d3748 0%, #374151 100%);
+
+   /* === MÀU CHỮ DARK === */
+   --text-primary: #f7fafc;           /* Chữ trắng chính */
+   --text-secondary: #e2e8f0;         /* Chữ xám sáng */
+   --text-light: #a0aec0;             /* Chữ xám nhạt */
+   --text-white: #ffffff;             /* Chữ trắng */
+   --text-muted: #718096;             /* Chữ mờ */
+   
+   /* === MÀU ĐƯỜNG VIỀN DARK === */
+   --border-light: #4a5568;           /* Viền nhạt dark */
+   --border-medium: #2d3748;          /* Viền trung bình dark */
+   --border-dark: #1a202c;            /* Viền đậm dark */
+   
+   /* === MÀU TRẠNG THÁI DARK === */
+   --success-color: #48bb78;          /* Xanh lá sáng hơn */
+   --success-bg: #1a202c;             /* Nền thành công dark */
+   --warning-color: #ed8936;          /* Vàng sáng hơn */
+   --warning-bg: #1a202c;             /* Nền cảnh báo dark */
+   --error-color: #f56565;            /* Đỏ sáng hơn */
+   --error-bg: #1a202c;               /* Nền lỗi dark */
+   --info-color: #63b3ed;             /* Xanh thông tin sáng hơn */
+   --info-bg: #1a202c;                /* Nền thông tin dark */
+   
+   /* === MÀU BÓNG ĐỔ DARK === */
+   --shadow-light: 0 2px 10px rgba(0,0,0,0.3);
+   --shadow-medium: 0 4px 15px rgba(0,0,0,0.4);
+   --shadow-dark: 0 10px 30px rgba(0,0,0,0.5);
+   --shadow-hover: 0 12px 30px rgba(0,0,0,0.4);
+   
+   /* === MÀU ĐĂNG NHẬP DARK === */
+   --auth-primary: #5dade2;           /* Xanh sáng cho dark mode */
+   --auth-hover: #3498db;             /* Xanh hover dark */
+   --google-border: #4a5568;          /* Viền Google dark */
+   --google-hover: #5dade2;           /* Hover Google dark */
+   
+   /* === MÀU DROPDOWN DARK === */
+   --dropdown-bg: #2d3748;            /* Nền dropdown dark */
+   --dropdown-hover: #4a5568;         /* Hover dropdown dark */
+   --dropdown-divider: #4a5568;       /* Đường phân cách dark */
+   
+   /* === MÀU RESPONSIVE DARK === */
+   --mobile-bg: #2d3748;              /* Nền mobile dark */
+   --mobile-border: #5dade2;          /* Viền mobile dark */
+   --mobile-text: #5dade2;            /* Chữ mobile dark */
+}
+
+/* =================================
    HƯỚNG DẪN SỬ DỤNG
    ================================= */
 
 /*
 💡 CÁCH THAY ĐỔI MÀU:
 
-1. CHỦ ĐỀ XANH DƯƠNGxanh (Mặc định):
+1. CHỦ ĐỀ XANH DƯƠNG (Mặc định):
    --primary-color: #3498db;
    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
@@ -112,14 +192,19 @@
    --gradient-primary: linear-gradient(135deg, #ff6a88 0%, #ff9a9e 100%);
 
 6. CHỦ ĐỀ TỐI (Dark Mode):
-   --bg-primary: #2c3e50;
-   --bg-secondary: #34495e;
-   --text-primary: #ecf0f1;
-   --text-secondary: #bdc3c7;
+   Sử dụng nút Dark Mode toggle trong header để chuyển đổi.
+   Dark mode sẽ tự động thay đổi tất cả màu sắc phù hợp.
 
 📝 LƯU Ý:
 - Sau khi thay đổi, save file và refresh browser
-- Có thể thay đổi từng màu riêng lẻ hoặc cả bộ theme
+- Có thể thay đổi từng màu riêng lẻ hoặc cả bộ theme  
+- Dark mode được lưu trong localStorage
 - Gradient có thể tạo tại: https://cssgradient.io/
 - Màu có thể chọn tại: https://coolors.co/
+
+🌙 DARK MODE:
+- Tự động theo system preference
+- Toggle button trong header
+- Lưu preference trong localStorage
+- Thay đổi toàn bộ color scheme
 */

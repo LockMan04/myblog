@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useBlur } from '../App';
 import AuthModal from './AuthModal';
+import DarkModeToggle from './DarkModeToggle';
 import { Search, X, Menu } from 'lucide-react';
 
 const Header = () => {
@@ -92,7 +93,7 @@ const Header = () => {
     const getSubcategoryLink = (category, subcategory) => {
         // Xử lý các link đặc biệt
         if (subcategory === 'Tạo mã QR') {
-            return '/qr-code';
+            return 'tools/qr-code';
         }
         // Default link pattern
         return `/category/${category.toLowerCase()}/${subcategory.toLowerCase()}`;
@@ -140,6 +141,11 @@ const Header = () => {
                                     <Search className='w-3 h-3' />
                                 </button>
                             </form>
+                        </li>
+
+                        {/* Mobile Dark Mode Toggle */}
+                        <li className="mobile-dark-mode-item">
+                            <DarkModeToggle />
                         </li>
                         
                         {Object.keys(categories).map(category => (
@@ -222,6 +228,7 @@ const Header = () => {
                 
                     {/* Search Section - Desktop only icon */}
                     <div className="search-section">
+                        <DarkModeToggle />
                         <button 
                             className="search-toggle-btn"
                             onClick={toggleSearch}
